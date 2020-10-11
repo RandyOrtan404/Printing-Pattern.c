@@ -1,2 +1,2 @@
-# Printing-Pattern.c
+# Printing-Pattern
 Printing Pattern using Loops

@@ -4,68 +4,17 @@
 #include <stdlib.h>
 int main()
 {
-    int i,j,k,m,n,x;
+    int n;
     scanf("%d",&n);
-    k=n;
-    m = n+(n-1);
-    for(i=0;i<m;i++)
-    {
-        for(j=0;j<m;j++)
-        {
-            if(i<=n-1)
-            {        
-                if(i==0)
-                {
-                printf("%d ",k);
-                }
-                if(i>=1)
-                {
-                    if(j<i)
-                    {
-                        printf("%d ",k-j);
-                    }
-                    else if(j>=i && j<m-i)
-                    {
-                        printf("%d ",k-i);
-                    }
-                    else 
-                    {
-                        printf("%d ",(j-k+1)+1);
-                    }
-                }
-            }
-            else if(i==n-1)
-            {
-                if(j<n)
-                {
-                    printf("%d ",k-j);
-                }
-                else
-                {
-                    printf("%d ",(j-k+1)+1);
-                }
-            }
-            else if(i>=n)
-            {
-                x = m-i-1;
-                if(i==m)
-                {
-                printf("%d ",k);
-                }
-                if(j<x)
-                {
-                    printf("%d ",k-j);
-                }
-                else if(j>=x && j<m-x)
-                {
-                    printf("%d ",k-x);
-                }
-                else 
-                {
-                    printf("%d ",(j-k+1)+1);
-                }    
-            }
+    int len=n*2 -1,min;
+    for(int i=0;i<len;i++){
+        for(int j=0;j<len;j++){
+            min=i<j ?i:j;
+            min=min<len-i?min:len-i-1;
+            min=min<len-j-1?min:len-j-1;
+            printf("%d ",n-min);
         }
         printf("\n");
     }
+    return 0;
 }
